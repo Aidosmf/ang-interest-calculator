@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <h1 class="text-center">Angular Interest Calculator</h1>              
+      <div class="interestForm">
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#simpleForm" aria-controls="simpleForm" role="tab" data-toggle="tab">Simple Interest</a></li>
+          <li role="presentation"><a href="#compoundForm" aria-controls="compoundForm" role="tab" data-toggle="tab">Compound Interest</a></li>
+        </ul> <!-- /nav-tabs -->        
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="simpleForm">
+            <form class="form-horizontal">
+              <fieldset>
+                <legend><b>Formula:</b> A=i+(prt)</legend>
+                <!--<span class="help-block"></span>-->
+                <div class="form-group">
+                  <label for="principalSimple" class="col-lg-2 control-label">Principal</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" id="principalSimple" name="principalSimple" placeholder="Enter amount without dollar sign"/>
+                  </div>            
+                </div>
+                <div class="form-group">
+                  <label for="interestSimple" class="col-lg-2 control-label">Rate of Interest</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" id="interestSimple" name="interestSimple" placeholder="Example: 7%"/>
+                  </div> 
+                </div>
+                <div class="form-group">
+                  <label for="timePeriodSimple" class="col-lg-2 control-label">Time Period</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" id="timePeriodSimple" name="timePeriodSimple" placeholder="Example: 1 (must be in terms of years)"/>
+                    <br>
+                    <span class="help-block">Calculated Interest: <strong>{{amount.simpleCalculatedInterest | currency}}</strong></span>
+                    <span class="help-block">Total Amount: <strong>{{amount.totalSimple | currency}}</strong></span>
+                  </div> 
+                </div>                
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-primary" (click)="simpleInterest()" id="btnSimple">Submit</button>
+                </div>                
+              </fieldset>
+            </form> <!-- /Simple Interest Form --> 
+          </div> <!-- /simpleForm -->
+          <div role="tabpanel" class="tab-pane" id="compoundForm">
+              <form class="form-horizontal">
+                <fieldset>
+                  <legend><b>Formula:</b> A=p(1+(r/n))^(nt)</legend>                  
+                  <div class="form-group">
+                    <label for="principalCompound" class="col-lg-2 control-label">Principal</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="principalCompound" name="principalCompound" placeholder="Enter amount without dollar sign"/>
+                    </div>            
+                  </div>
+                  <div class="form-group">
+                    <label for="interestCompound" class="col-lg-2 control-label">Rate of Interest</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="interestCompound" name="interestCompound" placeholder="Example: 7%"/>
+                    </div> 
+                  </div>
+                  <div class="form-group">
+                    <label for="timePeriodCompound" class="col-lg-2 control-label">Time Period</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="timePeriodCompound" name="timePeriodCompound" placeholder="Example: 1 (must be in terms of years)"/>
+                    </div> 
+                  </div>
+                  <div class="form-group">
+                    <label for="compoundFrequency" class="col-lg-2 control-label">Compound Frequency</label>
+                    <div class="col-lg-10">
+                      <input type="text" class="form-control" id="compoundFrequency" name="compoundFrequency" placeholder="Example: 4 (means compounded quarterly)"/>
+                      <br>
+                      <span class="help-block">Calculated Interest: <strong>{{amount.compoundCalculatedInterest | currency}}</strong></span>
+                      <span class="help-block">Total Amount: <strong>{{amount.totalCompound | currency}}</strong></span>
+                    </div> 
+                  </div>
+                  <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-primary" (click)="compoundInterest()" id="btnCompound">Submit</button>
+                  </div>                    
+                </fieldset>
+              </form> <!-- /Compound Interest Form -->
+          </div><!-- /compoundForm -->
+        </div><!-- Tab panes --> 
+      </div> <!-- /interestForm -->                     
+    </div> <!-- /col -->
+  </div> <!-- /row -->
+</div> <!-- /container -->

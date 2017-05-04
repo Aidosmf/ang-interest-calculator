@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-2 col-offset-6">
+            <h1>Tasks:</h1>
+            <p>Build a responsive web application to calculate simple and compound interest.</p>
+            <ol class="task">
+                <li *ngFor="let task of tasks; let i = index">
+                    <button (click)="deleteTask(i)" class="btn btn-danger btn-xs">X</button> {{task}}
+                </li>
+            </ol>
+            <form class="form-horizontal" (submit)="addTask(task.value)">
+                <div class="form-group">
+                    <label class="control-label" for="focusedInput">Add a task</label>
+                    <input #task class="form-control" id="focusedInput" type="text" placeholder="add any task you want and press enter">
+                </div>
+            </form> <!-- /Simple Interest Form -->                                    
+        </div>
+    </div>
+</div>

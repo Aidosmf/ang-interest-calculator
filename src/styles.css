@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  padding-top: 100px;   
+  min-height: 100%;
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: -50px;
+}
+
+.footer, .push {
+  height: 50px;
+}
+
+h1 {  
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #2c3e50;
+    background-color: #fbfcfc;
+    border: 1px solid #ecf0f1;
+    border-bottom-color: transparent;
+    cursor: default;
+}
+
+.tab-content {
+    padding: 2%;
+    border-right: 1px solid #ecf0f1;
+    border-bottom: 1px solid #ecf0f1;
+    border-left: 1px solid #ecf0f1;
+    background-color: #fbfcfc;
+}
+
+form {
+    padding-top: 20px;
+}
+
+.interestForm {
+  margin-top: 50px;
+}
+
+.task{
+  line-height: 25px;
+}
